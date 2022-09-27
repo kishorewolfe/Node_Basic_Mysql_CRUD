@@ -1,0 +1,36 @@
+
+
+<div class="container my-3">
+    <div class="container">
+        <a class="btn btn-outline" href="/home">Home</a>
+
+    </div>
+    <div class="container">
+        {{#if msg}}
+            <div class="alert alert-success" role="alert">
+                {{msg}}
+</div>
+        {{/if}}
+
+    </div>
+    {{#each rows}}
+   <form method="POST" action="/edituser/{{this.ID}}" autocomplete="false">
+ 
+     <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{this.Name}}">
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="text" class="form-control" id="age" name="age" value="{{this.Age}}">
+    </div>
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input type="city" class="form-control" id="city" name="city" value="{{this.City}}">
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+   </form>
+   {{/each}}
+</div>

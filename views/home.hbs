@@ -1,0 +1,50 @@
+<div class="container">
+
+</div>
+
+<div class="container">
+    <div class="container my-5">
+     <div class="row">
+      <div class="col">
+        <h2>DATABASE MANAGEMENT SYSTEM</h2>
+      </div>
+       <div class="col d-flex flex-row-reverse">
+         <a class="btn btn-secondary" href="/adduser">Add User</a>
+      </div>
+      
+        
+     </div>
+         
+
+    </div>
+    
+    <table class="table my-2 p-3 table-hover">
+  <thead class="table-dark ">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">City</th>
+     <th scope="col">Action 1</th>
+    <th scope="col">Action 2</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <td>{{this.ID}}</td>
+      <td>{{this.Name}}</td>
+      <td>{{this.Age}}</td>
+      <td>{{this.City}}</td>
+      <td><a class="btn btn-primary" href="/edituser/{{this.ID}}">Edit</a></td>
+       <td><a class="btn btn-danger" onclick="return confirm('Are you sure Do You want to delete?')" href="/deleteuser/{{this.ID}}">DELETE</a></td>
+
+    </tr>
+
+    {{/each}}
+ 
+  </tbody>
+</table>
+</div>
